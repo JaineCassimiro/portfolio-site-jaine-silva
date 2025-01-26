@@ -1,0 +1,990 @@
+/* Importando fonte estilosa */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #ff007f; /* Rosa vibrante */
+  --secondary-color: #ff8400; /* Laranja */
+  --dark-bg: #121212; /* Preto profundo */
+  --text-light: #ffffff; /* Branco */
+  --highlight: #8500ff; /* Roxo */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-light);
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+section {
+  margin: 20px 0;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+h2 {
+  color: var(--highlight);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 10px 0;
+}
+#pacman {
+  padding: 40px;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.game-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+}
+
+.game-display img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--highlight);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.game-display button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.game-display button:hover {
+  background-color: var(--highlight);
+  color: var(--dark-bg);
+}
+#pacman-game {
+  padding: 40px;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+}
+
+#pacmanCanvas {
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #000; /* Preto para parecer o fundo do Pac-Man */
+}
+
+.game-info button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.game-info button:hover {
+  background-color: var(--highlight);
+  color: var(--dark-bg);
+}
+#pacman-game {
+  padding: 40px;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+}
+
+#pacmanCanvas {
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #000; /* Preto para parecer o fundo do Pac-Man */
+}
+
+.game-info button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.game-info button:hover {
+  background-color: var(--highlight);
+  color: var(--dark-bg);
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  background: #111;
+  border: 2px solid #fff;
+}
+
+#score {
+  font-size: 24px;
+  margin-top: 10px;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  background: #111;
+  border: 2px solid #fff;
+}
+
+#score {
+  font-size: 24px;
+  margin-top: 10px;
+}
+/* Botão flutuante */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #ff6f91;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Janela do chatbot */
+.chatbot-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background-color: #2b2b2b;
+  color: #fff;
+  border-radius: 10px;
+  display: none; /* Inicialmente escondida */
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header {
+  background-color: #ff6f91;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chat-body {
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.bot-message,
+.user-message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.bot-message {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.user-message {
+  background-color: #ff6f91;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+}
+
+#chat-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+#send-btn {
+  background-color: #ff6f91;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  background-color: #e65d7e;
+}
+/* Botão flutuante */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #ff6f91;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000; /* Garante que o botão esteja no topo */
+}
+
+/* Janela do chatbot */
+.chatbot-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background-color: #2b2b2b;
+  color: #fff;
+  border-radius: 10px;
+  display: none; /* Inicialmente escondida */
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999; /* Garante que a janela esteja no topo */
+}
+
+.chat-header {
+  background-color: #ff6f91;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chat-body {
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.bot-message,
+.user-message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.bot-message {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.user-message {
+  background-color: #ff6f91;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+}
+
+#chat-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+#send-btn {
+  background-color: #ff6f91;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  background-color: #e65d7e;
+}
+.foto-perfil {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.foto-perfil img {
+  border-radius: 50%; /* Deixa a foto redonda */
+  width: 150px;
+  height: 150px;
+  border: 5px solid var(--primary-color);
+}
+
+/* Estilização para a seção 'Sobre mim' */
+#sobre {
+    padding: 20px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#sobre h2 {
+    color: var(--highlight);
+    margin-bottom: 15px;
+}
+
+#sobre p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Destaque em palavras-chave */
+#sobre p span {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #sobre {
+        padding: 15px;
+    }
+
+    #sobre p {
+        font-size: 1rem;
+    }
+}
+
+/* Estilo das tags */
+.tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tag {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    text-transform: capitalize;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tag:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do carrossel */
+#carousel {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#carousel h2 {
+    color: var(--highlight);
+    margin-bottom: 15px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: var(--highlight);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Ajusta o layout para centralizar o conteúdo */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+header, section, footer {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Ajusta o carrossel para manter proporção */
+.carousel-images img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Adiciona espaçamento no conteúdo geral */
+section {
+    padding: 20px;
+    background-color: var(--dark-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-images img {
+        max-height: 300px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 1024px) {
+    body {
+        padding: 20px;
+    }
+
+    header, section, footer {
+        max-width: 1200px;
+    }
+
+    .carousel-images img {
+        max-height: 500px;
+    }
+
+    section {
+        padding: 30px;
+    }
+}
+
+/* Carrossel otimizado para telas maiores */
+.carousel {
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-images img {
+    object-fit: contain;
+}
+
+/* Barra de navegação */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Espaço extra para compensar a barra fixa */
+body {
+    padding-top: 60px;
+}
+
+/* Tags da Alura e Oracle */
+.tags .tag a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: var(--highlight);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tags .tag a:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+}
+
+/* Tags de habilidades */
+.tags .tag {
+    display: inline-block;
+    background-color: var(--highlight);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tags .tag:hover {
+    background-color: #ff007f; /* Rosa */
+    color: #ffffff;
+}
+
+/* Estilização das categorias de habilidades */
+.categoria {
+    margin: 20px 0;
+}
+
+.categoria h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Tags de habilidades */
+.tags .tag {
+    display: inline-block;
+    background-color: var(--highlight);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tags .tag:hover {
+    background-color: #ff007f; /* Rosa */
+    color: #ffffff;
+}
+
+/* Estilo da galeria de certificados */
+.certificate-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.certificate-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para citações */
+.citacoes {
+    margin: 20px 0;
+}
+
+.citacoes .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.citacoes .tag {
+    background-color: var(--highlight);
+    color: var(--text-light);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.citacoes .tag:hover {
+    background-color: #ff007f; /* Rosa */
+    transform: scale(1.1);
+}
+
+/* Estilo para livros */
+.livros {
+    margin: 20px 0;
+}
+
+.livros ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: var(--text-light);
+}
+
+.livros ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.livros ul li:hover {
+    color: var(--primary-color);
+}
+
+/* Estilo para citações */
+.citacoes {
+    margin: 20px 0;
+}
+
+.citacoes .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.citacoes .tag {
+    background-color: var(--highlight);
+    color: var(--text-light);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.citacoes .tag:hover {
+    background-color: #ff007f; /* Rosa */
+    transform: scale(1.1);
+}
+
+/* Estilo para livros */
+.livros {
+    margin: 20px 0;
+}
+
+.livros ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: var(--text-light);
+}
+
+.livros ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.livros ul li:hover {
+    color: var(--primary-color);
+}
+
+/* Estilo responsivo para exibição lado a lado */
+@media (min-width: 768px) {
+    #citacoes-livros {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .citacoes, .livros {
+        flex: 1;
+    }
+}
+
+/* Estilo para "Projetos" */
+#projetos {
+    margin: 30px 0;
+}
+
+#projetos .projeto {
+    background-color: var(--highlight);
+    color: var(--text-light);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+#projetos .projeto h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#projetos .projeto h3 a:hover {
+    color: #ff007f; /* Rosa */
+}
+
+/* Estilo para a foto de perfil no "Sobre Mim" */
+.foto-perfil img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adicionar animações para hover */
+.projeto:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Estilo para lista de certificados */
+.certificates-list {
+    list-style: none;
+    padding: 0;
+}
+
+.certificates-list li {
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.certificates-list li:hover {
+    color: #ff007f;
+}
+
+/* Caixa de detalhes */
+.details-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--highlight);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+    display: none;
+}
+
+.details.hidden {
+    display: none;
+}
+
+.details:not(.hidden) {
+    display: block;
+    color: var(--text-light);
+}
+
+/* Estilo da seção de propaganda */
+#dev-frontend {
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(to right, #6a0dad, #ff007f);
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#dev-frontend .advert-container {
+    margin-top: 15px;
+}
+
+.advert-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff007f;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #6a0dad;
+    transform: scale(1.1);
+}
+
+/* Estilo para o novo link na barra de navegação */
+.nav-link {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #6a0dad;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ff007f;
+    transform: scale(1.1);
+}
